@@ -8,9 +8,9 @@ const ModalEditUser = (props) => {
     const [name, setName] = useState("");
     const [job, setJob] = useState("");
 
-    const handleEditUser = async() => {
+    const handleEditUser = async () => {
         let res = await putUpdateUser(name, job);
-        if(res && res.updatedAt){
+        if (res && res.updatedAt) {
             //success
             handleEditUserFromModal({
                 first_name: name,
@@ -22,46 +22,50 @@ const ModalEditUser = (props) => {
         }
     }
 
-    useEffect(()=>{
-        if(show){
+    useEffect(() => {
+        if (show) {
             setName(dataUserEdit.first_name)
         }
-        
+
     }, [dataUserEdit])
 
 
     return (<>
-        <Modal show={show} onHide={handleClose}>
+        <Modal
+            show={show}
+            onHide={handleClose}
+            backdrop="static"
+            keyboard={false}>
             <Modal.Header closeButton>
                 <Modal.Title>Edit a User</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <div className='body-add-new'>
-                        <div className="mb-3">
-                            <label for="exampleInputEmail1" className="form-label">Name</label>
-                            <input 
-                                type="text" 
-                                className="form-control" 
-                                value={name}
-                                onChange={(event) => setName(event.target.value)}
-                            />
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label">Job</label>
-                            <input 
-                                type="text" 
-                                className="form-control" 
-                                value = {job}
-                                onChange={(event) => setJob(event.target.value)}     
-                            />
-                        </div>
+                    <div className="mb-3">
+                        <label for="exampleInputEmail1" className="form-label">Name</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={name}
+                            onChange={(event) => setName(event.target.value)}
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Job</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={job}
+                            onChange={(event) => setJob(event.target.value)}
+                        />
+                    </div>
                 </div>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick = {handleClose}>
+                <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>
-                <Button variant="primary" onClick = {() => handleEditUser()}>
+                <Button variant="primary" onClick={() => handleEditUser()}>
                     Confirm
                 </Button>
             </Modal.Footer>
