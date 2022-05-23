@@ -2,23 +2,25 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import logoApp from '../assets/images/logo192.png';
+import { useLocation, NavLink } from 'react-router-dom';
 
 const Header = (props) => {
+    const location = useLocation();
     return (<>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" >
             <Container>
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand href="#home"> <img src={logoApp} width="30" height="30" className='d-inline-block align-top' alt='React Bootstrap logo' /><span>Nguyen Thai Tuan</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Link</Nav.Link>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        <NavLink to="/" className="nav-link">Home</NavLink>
+                        <NavLink to="/users" className="nav-link">Manage Users</NavLink>
+                    </Nav>
+                    <Nav>
+                        <NavDropdown title="Setting" className='justify-content-end'>
+                            <NavDropdown.Item href="Login">Login</NavDropdown.Item>
+                            <NavDropdown.Item href="Logout">Logout</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
