@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container'
 import Home from './components/Home';
 import { ToastContainer, toast } from 'react-toastify';
 import { Routes, Route, Link } from "react-router-dom";
+import Login from './components/Login';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='/users' element={<TableUsers />}></Route>
+            <Route path='/login' element={<Login />}></Route>
           </Routes>
         </Container>
 
