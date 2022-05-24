@@ -10,6 +10,7 @@ const AppRoutes = () => {
         <>
             <Routes>
                 <Route path='/' element={<Home />}></Route>
+                <Route path='/React-practice' element={<Home />}></Route>
                 <Route path='/login' element={<Login />}></Route>
             <Route
                 path="/users"

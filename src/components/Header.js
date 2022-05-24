@@ -28,10 +28,13 @@ const Header = (props) => {
     return (<>
         <Navbar bg="light" expand="lg" >
             <Container>
-                <Navbar.Brand> <img src={logoApp} width="30" height="30" className='d-inline-block align-top' alt='React Bootstrap logo' /><span>Nguyen Thai Tuan</span></Navbar.Brand>
+                <Navbar.Brand href="/"> 
+                    <img src={logoApp} width="30" height="30" className='d-inline-block align-top' alt='React Bootstrap logo' />
+                    <span>Nguyen Thai Tuan</span>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    {(user && user.auth || window.location.pathname === '/') && 
+                    {(user && user.auth || window.location.pathname === '/' || window.location.pathname === '/React-practice') && 
                     <>
                     <Nav className="me-auto">
                         <NavLink to="/" className="nav-link">Home</NavLink>

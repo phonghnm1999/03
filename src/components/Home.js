@@ -34,8 +34,15 @@ const Home = () => {
                 <br/>
                 Backend requirements (optional)
                 <br/>
-                <hr></hr>
-                <b>Complete exercises and instructions for use:</b>
+                <hr/>
+                <b>Note:</b>
+                <div>
+                    Email: eve.holt@reqres.in 
+                </div>
+                <div>
+                    Password: You can type anything
+                </div>
+
             </div>
         </>
     )
