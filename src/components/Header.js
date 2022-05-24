@@ -28,7 +28,7 @@ const Header = (props) => {
     return (<>
         <Navbar bg="light" expand="lg" >
             <Container>
-                <Navbar.Brand href="#home"> <img src={logoApp} width="30" height="30" className='d-inline-block align-top' alt='React Bootstrap logo' /><span>Nguyen Thai Tuan</span></Navbar.Brand>
+                <Navbar.Brand> <img src={logoApp} width="30" height="30" className='d-inline-block align-top' alt='React Bootstrap logo' /><span>Nguyen Thai Tuan</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     {(user && user.auth || window.location.pathname === '/') && 
